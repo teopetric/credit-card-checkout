@@ -1,0 +1,22 @@
+<div class="payment-form">
+    <form [formGroup]="paymentInfo" (ngSubmit)="onSubmit(paymentInfo)">
+        <label for="card-number">Credit Card Number</label>
+        <input class="card-number" type=text formControlName="card-number">
+
+        <label for="card-holder">Card Holder</label>
+        <input class="card-holder" type=text formControlName="card-holder">
+
+        <label for="expiration-date">Expiration Date</label>
+        <select class="expiration-date" formControlName="expiration-date">
+            <option *ngFor="let m of months" [value]="d">{{ m }}</option>
+        </select>
+        <select class="expiration-date" formControlName="expiration-date">
+            <option *ngFor="let y of years" [value]="y">{{ y }}</option>
+        </select>
+
+        <label for="cvc-number">CVC/CVV</label>
+        <input class="cvc-number" formControlName="cvc-number" maxlength="3">
+
+        <button type="submit" class="submit-button">Checkout</button>
+    </form>
+</div>
